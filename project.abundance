@@ -24,6 +24,12 @@
       "y": 0.5192307692307693,
       "uniqueID": "id-3",
       "name": "Molecule",
+      "ioValues": [
+        {
+          "name": "Input",
+          "ioValue": 5
+        }
+      ],
       "topLevel": false,
       "allAtoms": [
         {
@@ -117,24 +123,58 @@
           ]
         },
         {
-          "atomType": "Assembly",
-          "x": 0.619140625,
-          "y": 0.3557692307692307,
-          "uniqueID": "id-35",
+          "atomType": "Rotate",
+          "x": 0.5266927083333334,
+          "y": 0.6442307692307692,
+          "uniqueID": "id-45",
           "ioValues": [
             {
-              "name": "Shape 1",
-              "ioValue": null
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
             },
             {
-              "name": "Shape 2",
-              "ioValue": null
+              "name": "x-axis degrees",
+              "ioValue": 0
             },
             {
-              "name": "Shape 3",
-              "ioValue": null
+              "name": "y-axis degrees",
+              "ioValue": 0
+            },
+            {
+              "name": "z-axis degrees",
+              "ioValue": 0
             }
           ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.45833333333333337,
+          "uniqueID": "id-51",
+          "type": "number",
+          "options": []
+        },
+        {
+          "atomType": "Code",
+          "x": 0.1484375,
+          "y": 0.4134615384615385,
+          "uniqueID": "id-54",
+          "ioValues": [
+            {
+              "name": "shape",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "radius",
+              "ioValue": 5
+            },
+            {
+              "name": "height",
+              "ioValue": 10
+            }
+          ],
+          "codeVersion": 1,
+          "code": "\n// Example Code\nconst Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"radius\", type: \"number\", defaultValue: 5 },\n  { inputName: \"height\", type: \"number\", defaultValue: 10 }\n];\n\nlet importedShape = library[shape];\nlet newPlane = replicad.makePlane()\nlet circDraw = replicad.drawCircle(radius)\nlet sketchCir = circDraw.sketchOnPlane(newPlane)\nlet cyl = sketchCir.extrude(height)\nlet cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};\n\n"
         }
       ],
       "allConnectors": [
@@ -152,21 +192,6 @@
           "ap2Name": "geometry",
           "ap1ID": "id-15",
           "ap2ID": "id-22"
-        },
-        {
-          "ap2Name": "Shape 1",
-          "ap1ID": "id-18",
-          "ap2ID": "id-35"
-        },
-        {
-          "ap2Name": "Shape 2",
-          "ap1ID": "id-18",
-          "ap2ID": "id-35"
-        },
-        {
-          "ap2Name": "Shape 3",
-          "ap1ID": "id-18",
-          "ap2ID": "id-35"
         },
         {
           "ap2Name": "geometry2",
