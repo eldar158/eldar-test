@@ -20,14 +20,14 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.18489583333333334,
-      "y": 0.5192307692307693,
+      "x": 0.16927083333333331,
+      "y": 0.5224358974358975,
       "uniqueID": "id-3",
-      "name": "Molecule",
+      "name": "base-shape",
       "ioValues": [
         {
-          "name": "Input",
-          "ioValue": 5
+          "name": "vert_count",
+          "ioValue": 6
         }
       ],
       "topLevel": false,
@@ -123,58 +123,11 @@
           ]
         },
         {
-          "atomType": "Rotate",
-          "x": 0.5266927083333334,
-          "y": 0.6442307692307692,
-          "uniqueID": "id-45",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "x-axis degrees",
-              "ioValue": 0
-            },
-            {
-              "name": "y-axis degrees",
-              "ioValue": 0
-            },
-            {
-              "name": "z-axis degrees",
-              "ioValue": 0
-            }
-          ]
-        },
-        {
           "atomType": "Input",
           "x": 0.025384615384615384,
-          "y": 0.45833333333333337,
-          "uniqueID": "id-51",
-          "type": "number",
-          "options": []
-        },
-        {
-          "atomType": "Code",
-          "x": 0.1484375,
-          "y": 0.4134615384615385,
-          "uniqueID": "id-54",
-          "ioValues": [
-            {
-              "name": "shape",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "radius",
-              "ioValue": 5
-            },
-            {
-              "name": "height",
-              "ioValue": 10
-            }
-          ],
-          "codeVersion": 1,
-          "code": "\n// Example Code\nconst Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"radius\", type: \"number\", defaultValue: 5 },\n  { inputName: \"height\", type: \"number\", defaultValue: 10 }\n];\n\nlet importedShape = library[shape];\nlet newPlane = replicad.makePlane()\nlet circDraw = replicad.drawCircle(radius)\nlet sketchCir = circDraw.sketchOnPlane(newPlane)\nlet cyl = sketchCir.extrude(height)\nlet cylObj = {\n  geometry: [cyl],\n  dimension: \"3D\",\n  tags: [\"createdCylinder\"],\n  color: \"#A3CE5B\",\n  plane: null,\n  bom: []\n};\n\n"
+          "y": 0.15384615384615385,
+          "uniqueID": "id-61",
+          "name": "vert_count"
         }
       ],
       "allConnectors": [
@@ -194,15 +147,39 @@
           "ap2ID": "id-22"
         },
         {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-18",
+          "ap2ID": "id-5"
+        },
+        {
           "ap2Name": "geometry2",
           "ap1ID": "id-22",
           "ap2ID": "id-18"
+        },
+        {
+          "ap2Name": "number of sides",
+          "ap1ID": "id-61",
+          "ap2ID": "id-7"
         }
       ],
       "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Constant",
+      "x": 0.091796875,
+      "y": 0.673076923076923,
+      "uniqueID": "id-68",
+      "name": "test",
+      "value": 6
     }
   ],
-  "allConnectors": [],
+  "allConnectors": [
+    {
+      "ap2Name": "vert_count",
+      "ap1ID": "id-68",
+      "ap2ID": "id-3"
+    }
+  ],
   "unitsKey": "MM",
   "fileTypeVersion": 1,
   "filetypeVersion": 1
