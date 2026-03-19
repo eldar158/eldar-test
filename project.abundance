@@ -40,8 +40,8 @@
         },
         {
           "atomType": "RegularPolygon",
-          "x": 0.07161458333333334,
-          "y": 0.8621794871794872,
+          "x": 0.24479166666666669,
+          "y": 0.4519230769230769,
           "uniqueID": "id-7",
           "ioValues": [
             {
@@ -56,8 +56,8 @@
         },
         {
           "atomType": "Extrude",
-          "x": 0.16145833333333334,
-          "y": 0.5705128205128205,
+          "x": 0.35546875,
+          "y": 0.43910256410256415,
           "uniqueID": "id-11",
           "ioValues": [
             {
@@ -72,8 +72,8 @@
         },
         {
           "atomType": "Circle",
-          "x": 0.2584635416666667,
-          "y": 0.5096153846153846,
+          "x": 0.2421875,
+          "y": 0.75,
           "uniqueID": "id-15",
           "ioValues": [
             {
@@ -85,8 +85,8 @@
         },
         {
           "atomType": "Difference",
-          "x": 0.23958333333333334,
-          "y": 0.25641025641025644,
+          "x": 0.47460937499999994,
+          "y": 0.45512820512820507,
           "uniqueID": "id-18",
           "ioValues": [
             {
@@ -96,6 +96,43 @@
             {
               "name": "geometry2",
               "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Extrude",
+          "x": 0.3567708333333333,
+          "y": 0.7564102564102564,
+          "uniqueID": "id-22",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "height",
+              "ioValue": 300,
+              "currentEquation": "300"
+            }
+          ]
+        },
+        {
+          "atomType": "Assembly",
+          "x": 0.619140625,
+          "y": 0.3557692307692307,
+          "uniqueID": "id-35",
+          "ioValues": [
+            {
+              "name": "Shape 1",
+              "ioValue": null
+            },
+            {
+              "name": "Shape 2",
+              "ioValue": null
+            },
+            {
+              "name": "Shape 3",
+              "ioValue": null
             }
           ]
         }
@@ -112,8 +149,28 @@
           "ap2ID": "id-18"
         },
         {
-          "ap2Name": "geometry2",
+          "ap2Name": "geometry",
           "ap1ID": "id-15",
+          "ap2ID": "id-22"
+        },
+        {
+          "ap2Name": "Shape 1",
+          "ap1ID": "id-18",
+          "ap2ID": "id-35"
+        },
+        {
+          "ap2Name": "Shape 2",
+          "ap1ID": "id-18",
+          "ap2ID": "id-35"
+        },
+        {
+          "ap2Name": "Shape 3",
+          "ap1ID": "id-18",
+          "ap2ID": "id-35"
+        },
+        {
+          "ap2Name": "geometry2",
+          "ap1ID": "id-22",
           "ap2ID": "id-18"
         }
       ],
