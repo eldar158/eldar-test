@@ -1,16 +1,127 @@
 {
-    "atomType": "Molecule",
-    "name": "eldar-test",
-    "x": 0,
-    "y": 0,
-    "uniqueID": "366129bc-b962-4471-b08c-6bff13f774fd",
-    "ioValues": [],
-    "description": "Molecules provide an organizational structure to contain atoms. Double click on a molecule to enter it. Use the up arrow in the upper right hand corner of the screen to go up one level.",
-    "topLevel": true,
-    "allAtoms": [],
-    "allConnectors": [],
-    "unitsKey": "MM",
-    "fileTypeVersion": 1,
-    "compiledBom": {},
-    "filetypeVersion": 1
+  "atomType": "Molecule",
+  "x": 0,
+  "y": 0,
+  "uniqueID": "366129bc-b962-4471-b08c-6bff13f774fd",
+  "name": "eldar-test",
+  "topLevel": true,
+  "allAtoms": [
+    {
+      "atomType": "Output",
+      "x": 0.98,
+      "y": 0.5,
+      "uniqueID": "id-1",
+      "ioValues": [
+        {
+          "name": "number or geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ]
+    },
+    {
+      "atomType": "Molecule",
+      "x": 0.18489583333333334,
+      "y": 0.5192307692307693,
+      "uniqueID": "id-3",
+      "name": "Molecule",
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-5",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "RegularPolygon",
+          "x": 0.07161458333333334,
+          "y": 0.8621794871794872,
+          "uniqueID": "id-7",
+          "ioValues": [
+            {
+              "name": "number of sides",
+              "ioValue": 6
+            },
+            {
+              "name": "diameter",
+              "ioValue": 10
+            }
+          ]
+        },
+        {
+          "atomType": "Extrude",
+          "x": 0.16145833333333334,
+          "y": 0.5705128205128205,
+          "uniqueID": "id-11",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "height",
+              "ioValue": 10
+            }
+          ]
+        },
+        {
+          "atomType": "Circle",
+          "x": 0.2584635416666667,
+          "y": 0.5096153846153846,
+          "uniqueID": "id-15",
+          "ioValues": [
+            {
+              "name": "diameter",
+              "ioValue": 4,
+              "currentEquation": "4"
+            }
+          ]
+        },
+        {
+          "atomType": "Difference",
+          "x": 0.23958333333333334,
+          "y": 0.25641025641025644,
+          "uniqueID": "id-18",
+          "ioValues": [
+            {
+              "name": "geometry1",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "geometry2",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-7",
+          "ap2ID": "id-11"
+        },
+        {
+          "ap2Name": "geometry1",
+          "ap1ID": "id-11",
+          "ap2ID": "id-18"
+        },
+        {
+          "ap2Name": "geometry2",
+          "ap1ID": "id-15",
+          "ap2ID": "id-18"
+        }
+      ],
+      "fileTypeVersion": 1
+    }
+  ],
+  "allConnectors": [],
+  "unitsKey": "MM",
+  "fileTypeVersion": 1,
+  "filetypeVersion": 1
 }
